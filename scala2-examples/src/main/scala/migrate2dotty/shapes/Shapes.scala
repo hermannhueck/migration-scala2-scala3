@@ -27,7 +27,6 @@ object Geometry {
 }
 
 import scala.util.chaining._
-import scala.language.implicitConversions
 import util._
 
 import Geometry._
@@ -35,7 +34,7 @@ import Geometry.Shape._
 
 object Shapes extends App {
 
-  lineStart() pipe println
+  printStartLine()
 
   val circle = Circle(Length(1.0))
 
@@ -49,5 +48,5 @@ object Shapes extends App {
   val cCircumferenceDouble: Double = cCircumference.double
   f"circle circumference: $cCircumferenceDouble%.3f" pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }

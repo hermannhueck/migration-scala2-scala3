@@ -1,9 +1,5 @@
 package migrate2dotty.ana1
 
-import scala.util.chaining._
-import scala.language.implicitConversions
-import util._
-
 // check List of possible anagrams against word
 // solution 1: just compares sorted strings
 
@@ -22,9 +18,14 @@ def isAnagram(toCheck: String, word: String): Boolean =
 def lcSorted(s: String) =
   s.toLowerCase.nn.toSeq.sorted.unwrap
 
+
+import scala.util.chaining._
+import scala.language.implicitConversions
+import util._
+  
 @main def Anagrams: Unit = {
 
-  lineStart() pipe println
+  printStartLine()
 
   // primitive tests
 
@@ -39,5 +40,5 @@ def lcSorted(s: String) =
   anagramsFor("Rust", List("urst", "srut", "surt", "tsru", "tsur", "rust", "trust", "trusty"))
     .ensuring(_ == List("urst", "srut", "surt", "tsru", "tsur")) pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }

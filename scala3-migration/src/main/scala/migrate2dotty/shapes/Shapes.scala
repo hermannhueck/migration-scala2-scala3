@@ -41,7 +41,7 @@ import Geometry.Shape._
 
 @main def Shapes: Unit = {
 
-  lineStart() pipe println
+  printStartLine()
 
   val circle = Circle(Length(1.0))
 
@@ -55,5 +55,5 @@ import Geometry.Shape._
   val cCircumferenceDouble: Double = cCircumference.double
   f"circle circumference: $cCircumferenceDouble%.3f" pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }

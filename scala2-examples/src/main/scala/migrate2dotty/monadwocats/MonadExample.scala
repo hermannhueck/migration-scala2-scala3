@@ -7,7 +7,7 @@ object MonadExample extends App {
 
   import Computations._
 
-  lineStart() pipe println
+  printStartLine()
 
   println("----- List:")
 
@@ -39,5 +39,5 @@ object MonadExample extends App {
   val eResult = compute(e1, e2)
   println(eResult)
 
-  lineEnd() pipe println
+  printEndLine()
 }

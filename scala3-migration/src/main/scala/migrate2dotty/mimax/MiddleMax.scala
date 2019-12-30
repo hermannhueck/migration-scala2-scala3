@@ -23,13 +23,14 @@ def [T: Ordering](xs: List[T]) mimax: List[T] = {
   l1.sorted ++ middle ++ l2
 }
 
+
+import scala.util.chaining._
+import scala.language.implicitConversions
+import util._
+
 @main def MiddleMax(ints: Int*) = {
 
-  import scala.util.chaining._
-  import scala.language.implicitConversions
-  import util._
-
-  lineStart() pipe println
+  printStartLine()
   
   val l1 = List(1, 2, 3, 4, 5, 6) tap println
   l1.mimax.ensuring {
@@ -46,5 +47,5 @@ def [T: Ordering](xs: List[T]) mimax: List[T] = {
   val l3 = ints.toList tap println
   l3.mimax pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }

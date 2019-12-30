@@ -1,9 +1,5 @@
 package migrate2dotty.ana2
 
-import scala.util.chaining._
-import scala.language.implicitConversions
-import util._
-
 // check List of possible anagrams against word
 // solution 2: deletes found character in word
 
@@ -27,9 +23,14 @@ def isAnagram2Helper(toCheck: List[Char], word: List[Char]): Boolean =
 def deleteFrom(chars: List[Char], ch: Char): List[Char] =
   chars.takeWhile(_ != ch) ++ chars.dropWhile(_ != ch).tail
 
+
+import scala.util.chaining._
+import scala.language.implicitConversions
+import util._
+
 @main def Anagrams: Unit = {
 
-  lineStart() pipe println
+  printStartLine()
 
   // primitive tests
 
@@ -44,5 +45,5 @@ def deleteFrom(chars: List[Char], ch: Char): List[Char] =
   anagramsFor("Rust", List("urst", "srut", "surt", "tsru", "tsur", "rust", "trust", "trusty"))
     .ensuring(_ == List("urst", "srut", "surt", "tsru", "tsur")) pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }

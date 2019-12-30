@@ -7,7 +7,7 @@ object ReaderExample extends App {
 
   import Computations._
 
-  lineStart() pipe println
+  printStartLine()
 
   val plus1: Int => Int = _ + 1
   val doubled: Int => Int = _ * 2
@@ -36,5 +36,5 @@ object ReaderExample extends App {
   (rPlus1 andThen rDoubled).run(10) pipe println // 22
   (rPlus1 andThen doubled).run(10) pipe println // 22
 
-  lineEnd() pipe println
+  printEndLine()
 }

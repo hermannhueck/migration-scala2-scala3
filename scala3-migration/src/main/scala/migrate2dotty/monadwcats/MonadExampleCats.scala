@@ -4,13 +4,12 @@ import cats.instances.list._
 import cats.instances.option._
 import cats.instances.either._
 
-import scala.language.implicitConversions
 import scala.util.chaining._
 import util._
 
 @main def MonadExampleCats: Unit =
 
-  lineStart() pipe println
+  printStartLine()
 
   println("----- List:")
 
@@ -42,4 +41,4 @@ import util._
   val eResult = compute(e1, e2)
   println(eResult)
 
-  lineEnd() pipe println
+  printEndLine()

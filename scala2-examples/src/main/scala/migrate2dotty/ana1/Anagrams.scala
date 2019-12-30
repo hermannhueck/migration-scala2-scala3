@@ -5,7 +5,7 @@ import util._
 
 object Anagrams extends App {
 
-  lineStart() pipe println
+  printStartLine()
 
   // check List of possible anagrams against word
   // solution 1: just compares sorted strings
@@ -35,8 +35,10 @@ object Anagrams extends App {
     .ensuring(_ == List()) pipe println
   anagramsFor("Rust", List("yrust"))
     .ensuring(_ == List()) pipe println
-  anagramsFor("Rust", List("urst", "srut", "surt", "tsru", "tsur", "rust", "trust", "trusty"))
-    .ensuring(_ == List("urst", "srut", "surt", "tsru", "tsur")) pipe println
+  anagramsFor(
+    "Rust",
+    List("urst", "srut", "surt", "tsru", "tsur", "rust", "trust", "trusty")
+  ).ensuring(_ == List("urst", "srut", "surt", "tsru", "tsur")) pipe println
 
-  lineEnd() pipe println
+  printEndLine()
 }
