@@ -25,6 +25,7 @@ In this live coding presentation I am taking some Scala 2 code samples and migra
 - Indentation / Optional Braces
 - New Control Syntax
 - Main Methods
+- Constructor invocations w/o _new_
 - Enums and ADTs
 - Opaque Type Aliases
 - Extension Methods
@@ -39,5 +40,5 @@ In this live coding presentation I am taking some Scala 2 code samples and migra
 - Using Scala 2 libraries with Dotty
 - Intersection Types
 - Union Types
-- Constructor invocations w/o _new_
+- Explicit Nulls
 
