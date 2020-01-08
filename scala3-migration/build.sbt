@@ -1,7 +1,7 @@
 import ScalacOptions._
 
 val projectName = "scala3-migration"
-val projectDescription = "migration: examples to migrate to Dotty/Scala3"
+val projectDescription = "migration: examples migrated to Dotty/Scala3"
 val projectVersion = "0.1.0"
 
 // val dottyVersion = "0.21.0-RC1"
@@ -13,6 +13,7 @@ inThisBuild(
     description := projectDescription,
     version := projectVersion,
     scalaVersion := dottyVersion,
+    scalacOptions ++= noOptions, // see: project/ScalacOptions.scala
     scalacOptions ++= dotcOptions, // see: project/ScalacOptions.scala
     libraryDependencies ++=
       Seq(

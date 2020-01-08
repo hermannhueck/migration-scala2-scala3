@@ -2,12 +2,14 @@ import sbt._
 
 object ScalacOptions {
 
+  val noOptions = Seq.empty
+
   val dotcOptions = Seq(
     "-encoding",
     "UTF-8",                     // source files are in UTF-8
     "-deprecation", // emit warning and location for usages of deprecated APIs
     "-strict", // use strict type rules, which means some formerly legal code does not typecheck anymore
-    "-migration", // mit warning and location for migration issues from Scala 2
+    "-migration", // with warning and location for migration issues from Scala 2
     "-new-syntax", // require `then` and `do` in control expressions
     "-indent", // allow significant indentation
     "-feature", // emit warning and location for usages of features that should be imported explicitly
