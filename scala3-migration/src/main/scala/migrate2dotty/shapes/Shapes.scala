@@ -25,10 +25,10 @@ object Geometry {
   object Area
     def apply(d: Double): Area = d
 
-  given (length: Length) extended with
+  extension on (length: Length)
     def double: Double = length
 
-  given (area: Area) extended with
+  extension on (area: Area)
     def double: Double = area
 }
 
