@@ -1,11 +1,11 @@
 package migrate2dotty.joiner
 
-// Joiner in fact is Monoid.
-
 trait Joiner[A] {
+
   def zero: A
   def join(lhs: A, rhs: A): A
-  def joinAll(as: A*): A =
+
+  @inline def joinAll(as: Seq[A]): A =
     as.fold(zero)(join)
 }
 
@@ -23,15 +23,5 @@ object Joiner {
     override def zero: List[A] = List.empty[A]
     override def join(lhs: List[A], rhs: List[A]): List[A] =
       lhs ++ rhs
-  }
-
-  final implicit class JoinSyntax[A](private val lhs: A) extends AnyVal {
-    @inline def join(rhs: A)(implicit joiner: Joiner[A]): A =
-      joiner.join(lhs, rhs)
-  }
-
-  final implicit class ListSyntax[A](private val as: List[A]) extends AnyVal {
-    @inline def joinAll(implicit joiner: Joiner[A]): A =
-      joiner.joinAll(as: _*)
   }
 }
