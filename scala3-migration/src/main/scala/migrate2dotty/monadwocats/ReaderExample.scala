@@ -6,7 +6,7 @@ import util._
 
 @main def ReaderExample: Unit = {
 
-  printStartLine()
+  line().green pipe println
 
   val plus1: Int => Int          = _ + 1
   val doubled: Int => Int        = _ * 2
@@ -37,5 +37,5 @@ import util._
   (rPlus1 andThen doubled).run(10) pipe println  // 22
   (rPlus1 andThen doubled).provide(10) pipe println  // 22
 
-  printEndLine()
+  line().green pipe println
 }

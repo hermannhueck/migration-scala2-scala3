@@ -2,7 +2,7 @@ package migrate2dotty.monadwocats
 
 import scala.annotation.infix
 
-final case class Reader[P, A](run: P => A) {
+final case class Reader[P, A](run: P => A) with
 
   // alias for run
   @infix def provide(param: P): A = run(param)
@@ -25,15 +25,16 @@ final case class Reader[P, A](run: P => A) {
 
   @infix def compose[B](that: B => P): Reader[B, A] =
     Reader(this.run compose that.apply)
-}
+end Reader
 
-object Reader {
+object Reader with
 
-  given [P]: Monad[[R] =>> Reader[P, R]]
+  // given [P]: Monad[[R] =>> Reader[P, R]] // w/o -Ykind-projector
+  given [P] as Monad[Reader[P, *]] // requires -Ykind-projector
     override def pure[A](a: A): Reader[P, A] = Reader pure a
     override def [A, B](fa: Reader[P, A]) flatMap (f: A => Reader[P, B]): Reader[P, B] =
       fa flatMap f
 
   @infix def pure[P, A](a: A): Reader[P, A] =
     Reader(_ => a)
-}
+end Reader
