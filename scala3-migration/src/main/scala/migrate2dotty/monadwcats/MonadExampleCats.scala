@@ -5,13 +5,14 @@ import cats.instances.option._
 import cats.instances.either._
 
 import scala.util.chaining._
+import scala.language.implicitConversions
 import util._
 
 @main def MonadExampleCats: Unit =
 
-  printStartLine()
+  line().green pipe println
 
-  println("----- List:")
+  s"${line(10)} List:".green pipe println
 
   val l1 = List(1, 2, 3)
   val l2 = List(10, 20, 30)
@@ -25,7 +26,7 @@ import util._
   val lResult3 = l3.flatten
   println(lResult3)
 
-  println("----- Option:")
+  s"${line(10)} Option:".green pipe println
 
   val o1 = Option(1)
   val o2 = Option(10)
@@ -33,7 +34,7 @@ import util._
   val oResult = compute(o1, o2)
   println(oResult)
 
-  println("----- Either:")
+  s"${line(10)} Either:".green pipe println
 
   val e1 = Right(1).withLeft[String]
   val e2 = Right(10).withLeft[String]
@@ -41,4 +42,5 @@ import util._
   val eResult = compute(e1, e2)
   println(eResult)
 
-  printEndLine()
+  line().green pipe println
+end MonadExampleCats

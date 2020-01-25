@@ -1,7 +1,6 @@
 package migrate2dotty.monadwcats
 
 import cats._
-
 import cats.syntax.flatMap._
 import cats.syntax.functor._
 
