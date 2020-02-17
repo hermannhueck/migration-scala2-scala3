@@ -17,7 +17,7 @@ inThisBuild(
     scalacOptions ++= dotcOptions, // see: project/ScalacOptions.scala
     libraryDependencies ++=
       Seq(
-        "org.typelevel" %% "cats-effect" % "2.0.0",
+        "org.typelevel" %% "cats-effect" % "2.1.1",
         "org.scalatest" %% "scalatest" % "3.1.0" % Test,
         "org.scalacheck" %% "scalacheck" % "1.14.3" % Test,
       ).map(_.withDottyCompat(scalaVersion.value)) ++ 
