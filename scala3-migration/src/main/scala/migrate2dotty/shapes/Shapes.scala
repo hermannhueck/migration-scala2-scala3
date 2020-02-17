@@ -5,14 +5,14 @@ object Geometry {
   opaque type Length = Double
   opaque type Area = Double
 
-  object Length
+  object Length:
     def apply(d: Double): Length = d
-  object Area
+  object Area:
     def apply(d: Double): Area = d
 
-  extension on (length: Length)
+  extension on (length: Length):
     def double: Double = length
-  extension on (area: Area)
+  extension on (area: Area):
     def double: Double = area
 
   enum Shape {
@@ -37,9 +37,9 @@ import util._
 import Geometry._
 import Geometry.Shape._
 
-@main def Shapes: Unit = {
+@main def Shapes: Unit =
 
-  printStartLine()
+  line().green pipe println
 
   val circle = Circle(Length(1.0))
 
@@ -53,5 +53,5 @@ import Geometry.Shape._
   val cCircumferenceDouble: Double = cCircumference.double
   f"circle circumference: $cCircumferenceDouble%.3f" pipe println
 
-  printEndLine()
-}
+  line().green pipe println
+end Shapes

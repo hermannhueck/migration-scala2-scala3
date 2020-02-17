@@ -1,12 +1,12 @@
 package migrate2dotty.monadwocats
 
 // use _ or ? for wildcard type
-trait Functor[F[?]] with
+trait Functor[F[?]]:
   def [A, B](x: F[A]) map (f: A => B): F[B]
 
 
 // trait Monad[F[_]] extends Functor[F] // use _ or ? for wildcard type
-trait Monad[F[?]] extends Functor[F] with
+trait Monad[F[?]] extends Functor[F]:
 
   // intrinsic abstract methods for Monad
 
@@ -22,20 +22,20 @@ trait Monad[F[?]] extends Functor[F] with
     flatMap(fa)(identity)
 end Monad
 
-object Monad with
+object Monad:
 
-  given Monad[List] with
+  given Monad[List]:
     override def pure[A](a: A): List[A] = List(a)
     override def [A, B](list: List[A]) flatMap (f: A => List[B]): List[B] =
       list flatMap f
 
-  given as Monad[Option] with
+  given as Monad[Option]:
     override def pure[A](a: A): Option[A] = Some(a)
     override def [A, B](option: Option[A]) flatMap (f: A => Option[B]): Option[B] =
       option flatMap f
   
   // given [L]: Monad[[R] =>> Either[L, R]]
-  given [L] as Monad[Either[L, *]] with // requires -Ykind-projector
+  given [L] as Monad[Either[L, *]]: // requires -Ykind-projector
     override def pure[A](a: A): Either[L, A] = Right(a)
     override def [A, B](fa: Either[L, A]) flatMap (f: A => Either[L, B]): Either[L, B] =
       fa flatMap f

@@ -4,7 +4,7 @@ import scala.util.chaining._
 import scala.language.implicitConversions
 import util._
 
-@main def ReaderExample: Unit = {
+@main def ReaderExample: Unit =
 
   line().green pipe println
 
@@ -38,4 +38,4 @@ import util._
   (rPlus1 andThen doubled).provide(10) pipe println  // 22
 
   line().green pipe println
-}
+end ReaderExample

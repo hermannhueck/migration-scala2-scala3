@@ -1,6 +1,6 @@
 package migrate2dotty.mimax
 
-def [T: Ordering](xs: List[T]) mimax: List[T] = {
+def [T: Ordering](xs: List[T]) mimax: List[T] =
 
   val sorted = xs.sorted.reverse
 
@@ -21,16 +21,16 @@ def [T: Ordering](xs: List[T]) mimax: List[T] = {
     .swap  // (List[T], List[T])
 
   l1.sorted ++ middle ++ l2
-}
+end mimax
 
 
 import scala.util.chaining._
 import scala.language.implicitConversions
 import util._
 
-@main def MiddleMax(ints: Int*) = {
+@main def MiddleMax(ints: Int*) =
 
-  printStartLine()
+  line().green pipe println
   
   val l1 = List(1, 2, 3, 4, 5, 6) tap println
   l1.mimax.ensuring {
@@ -47,5 +47,6 @@ import util._
   val l3 = ints.toList tap println
   l3.mimax pipe println
 
-  printEndLine()
-}
+  line().green pipe println
+
+end MiddleMax

@@ -28,9 +28,9 @@ import scala.util.chaining._
 import scala.language.implicitConversions
 import util._
 
-@main def Anagrams: Unit = {
+@main def Anagrams: Unit =
 
-  printStartLine()
+  line().green pipe println
 
   // primitive tests
 
@@ -45,5 +45,6 @@ import util._
   anagramsFor("Rust", List("urst", "srut", "surt", "tsru", "tsur", "rust", "trust", "trusty"))
     .ensuring(_ == List("urst", "srut", "surt", "tsru", "tsur")) pipe println
 
-  printEndLine()
-}
+  line().green pipe println
+
+end Anagrams

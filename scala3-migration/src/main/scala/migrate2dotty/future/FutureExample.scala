@@ -36,4 +36,4 @@ import util._
   Thread.sleep(3000L)
 
   line().green pipe println
-
+end FutureExample

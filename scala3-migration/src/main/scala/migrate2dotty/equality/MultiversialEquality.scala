@@ -2,7 +2,7 @@ package migrate2dotty.equality
 
 import scala.language.strictEquality
 
-object MultiversialEquality {
+object MultiversialEquality:
 
   val x: Int = 42
   val s: String = "foo"
@@ -22,8 +22,8 @@ object MultiversialEquality {
   import util._
 
   @main def EqualityCheck: Unit =
-
     line().green pipe println
     "EqualityCheck" pipe println
     line().green pipe println
-}
+
+end MultiversialEquality

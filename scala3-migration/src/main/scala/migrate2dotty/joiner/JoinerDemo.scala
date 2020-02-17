@@ -4,8 +4,8 @@ import util._
 import scala.util.chaining._
 import scala.language.implicitConversions
 
-import Joiner._
-import Joiner.given // should work w/o this import, b/c givens are in implicit scope
+// import Joiner._
+import Joiner.{given _} // should work w/o this import, b/c givens are in implicit scope
 
 @main def JoinerDemo: Unit =
 
@@ -50,3 +50,4 @@ import Joiner.given // should work w/o this import, b/c givens are in implicit s
   s"all ints joined: $allIntsJoined" pipe println
   
   line().green pipe println
+end JoinerDemo
