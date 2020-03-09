@@ -76,12 +76,20 @@ In this live coding presentation I am taking some Scala 2 code samples and migra
   [https://www.youtube.com/watch?v=zQFjC3zLYwo](https://www.youtube.com/watch?v=zQFjC3zLYwo)
 - Guillaume Martres at ScalaWorld GB: Scala 3, Type Inference and You! (published September 2019)
   [https://www.youtube.com/watch?v=lMvOykNQ4zs](https://www.youtube.com/watch?v=lMvOykNQ4zs)
+
+---
+
+## More Talks
+
 - Lukas Rytz at ScalaDays Lausanne: How are we going to migrate to Scala 3.0, aka Dotty? (published July 2019)
   [https://www.youtube.com/watch?v=KUl1Ilcf0b8](https://www.youtube.com/watch?v=KUl1Ilcf0b8)
 - Sébastien Doeraene at ScalaSphere Krakov: How will TASTy affect the Scala ecosystem, exactly? (published January 2020)
   [https://www.youtube.com/watch?v=_N7zNhLdB1Y](https://www.youtube.com/watch?v=_N7zNhLdB1Y)
 - Josh Suereth & James Ward at Devoxx Belgium: What's coming in Scala 3 (published November 2019)
   [https://www.youtube.com/watch?v=Nv-BzYOMiWY](https://www.youtube.com/watch?v=Nv-BzYOMiWY)
+- Jamie Thompson at f(by) 2020:
+  Taste the difference with Scala 3: Migrating the ecosystem and more (published February 2020)
+  [https://www.youtube.com/watch?v=YQmVrUdx8TU](https://www.youtube.com/watch?v=YQmVrUdx8TU)
 
 ---
 
