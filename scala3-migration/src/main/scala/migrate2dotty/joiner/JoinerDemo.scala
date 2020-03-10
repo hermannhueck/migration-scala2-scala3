@@ -50,4 +50,3 @@ import Joiner.{given _} // should work w/o this import, b/c givens are in implic
   s"all ints joined: $allIntsJoined" pipe println
   
   line().green pipe println
-end JoinerDemo

@@ -9,7 +9,6 @@ trait Joiner[A]:
 
   inline def (as: Seq[A]) joinAll: A =
     as.fold(zero)(_ join _)
-end Joiner
 
 object Joiner:
 
@@ -24,4 +23,3 @@ object Joiner:
     override def zero: List[A] = List.empty[A]
     @infix override def (lhs: List[A]).join(rhs: List[A]): List[A] =
       lhs ++ rhs
-end Joiner
