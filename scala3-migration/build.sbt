@@ -4,8 +4,8 @@ val projectName = "scala3-migration"
 val projectDescription = "migration: examples migrated to Dotty/Scala3"
 val projectVersion = "0.1.0"
 
-// val dottyVersion = "0.22.0-RC1"
-val dottyVersion = dottyLatestNightlyBuild.get
+val dottyVersion = "0.23.0-RC1"
+// val dottyVersion = dottyLatestNightlyBuild.get
 
 inThisBuild(
   Seq(
