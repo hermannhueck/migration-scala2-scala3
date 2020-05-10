@@ -6,7 +6,7 @@ import cats.syntax.functor._
 
 import scala.language.implicitConversions
 
-def compute[F[?]: Monad, A, B](fa: F[A], fb: F[B]): F[(A, B)] =
+def compute[F[_]: Monad, A, B](fa: F[A], fb: F[B]): F[(A, B)] =
   for
     a <- fa
     b <- fb
