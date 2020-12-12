@@ -23,7 +23,19 @@ inThisBuild(
       "com.novocode"   % "junit-interface" % "0.11" % Test,
       compilerPlugin(
         "org.typelevel" % "kind-projector" % "0.11.2" cross CrossVersion.full
+      ),
+      compilerPlugin( // https://github.com/oleg-py/better-monadic-for
+        compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
       )
-    )
+    ),
+    testFrameworks += new TestFramework("munit.Framework"),
+    initialCommands :=
+      s"""|
+          |import scala.util.chaining._
+          |import cats._, cats.data._, cats.implicits._
+          |println
+          |""".stripMargin
   )
 )
+
+Compile / console / scalacOptions --= scalcOptionsToRemoveForConsole

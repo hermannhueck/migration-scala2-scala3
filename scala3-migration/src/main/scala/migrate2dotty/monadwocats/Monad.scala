@@ -1,12 +1,12 @@
 package migrate2dotty.monadwocats
 
 // use _ or ? for wildcard type
-trait Functor[F[?]]:
+trait Functor[F[_]]:
   def [A, B](x: F[A]) map (f: A => B): F[B]
 
 
 // trait Monad[F[_]] extends Functor[F] // use _ or ? for wildcard type
-trait Monad[F[?]] extends Functor[F]:
+trait Monad[F[_]] extends Functor[F]:
 
   // intrinsic abstract methods for Monad
 
