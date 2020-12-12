@@ -1,7 +1,6 @@
 package migrate2dotty.future
 
 import scala.concurrent.{ExecutionContext, Future}
-import scala.concurrent.duration._
 import scala.util.{Failure, Success, Try}
 
 import scala.util.chaining._

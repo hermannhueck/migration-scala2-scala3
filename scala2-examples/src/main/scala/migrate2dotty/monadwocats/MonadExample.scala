@@ -1,6 +1,5 @@
 package migrate2dotty.monadwocats
 
-import scala.util.chaining._
 import util._
 
 object MonadExample extends App {

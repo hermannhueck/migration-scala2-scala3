@@ -4,7 +4,6 @@ import cats.instances.list._
 import cats.instances.option._
 import cats.instances.either._
 
-import scala.util.chaining._
 import util._
 
 object MonadExampleCats extends App {

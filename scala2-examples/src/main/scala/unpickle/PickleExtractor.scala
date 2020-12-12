@@ -22,7 +22,7 @@ import scala.tools.asm.tree.ClassNode
 import scala.tools.asm.{ClassReader, ClassWriter, Opcodes}
 
 import scala.util.chaining._
-import scala.tools.nsc.interactive.Pickler
+// import scala.tools.nsc.interactive.Pickler
 
 object PickleExtractor {
 
@@ -106,11 +106,13 @@ object PickleExtractor {
       input.visibleAnnotations.asScala.foreach { node =>
         s"===> node.desc = ${node.desc}" pipe println
         if (node.desc == "Lscala/reflect/ScalaSignature;") {
+          @annotation.nowarn("cat=other-match-analysis")
           val Array("bytes", data: String) = node.values.toArray()
           val bytes                        = data.getBytes(java.nio.charset.StandardCharsets.UTF_8)
           val len                          = ByteCodecs.decode(bytes)
           pickleData = bytes.take(len)
         } else if (node.desc == "Lscala/reflect/ScalaLongSignature;") {
+          @annotation.nowarn("cat=other-match-analysis")
           val Array("bytes", data: java.util.Collection[String @unchecked]) = node.values.toArray()
           val encoded                                                       = data.asScala.toArray flatMap (_.getBytes(java.nio.charset.StandardCharsets.UTF_8))
           val len                                                           = ByteCodecs.decode(encoded)

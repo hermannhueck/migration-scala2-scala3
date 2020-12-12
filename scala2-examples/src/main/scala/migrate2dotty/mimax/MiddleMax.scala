@@ -14,10 +14,13 @@ object MiddleMax extends App {
 
     val (l1, l2) = listEvenLength
       .grouped(2) // Iterator[List[T]] each List with 2 elems
-      .toList // List[List[T]] each List with 2 elems
-      .map { case List(x, y) => (x, y) } // List[(T, T)]
+      .toList     // List[List[T]] each List with 2 elems
+      .map {
+        case List(x, y) => (x, y)
+        case _          => throw new UnsupportedOperationException("element is not a list with 2 elements")
+      }      // List[(T, T)]
       .unzip // (List[T], List[T])
-      .swap // (List[T], List[T])
+      .swap  // (List[T], List[T])
 
     l1.sorted ++ middle ++ l2
   }
@@ -35,16 +38,16 @@ object MiddleMax extends App {
   l1.mimax.ensuring {
     _ == List(1, 3, 5, 6, 4, 2)
   } pipe println
-  println
+  println()
 
   val l2 = List(1, 2, 3, 4, 5) tap println
   l2.mimax.ensuring {
     _ == List(1, 3, 5, 4, 2)
   } pipe println
-  println
+  println()
 
   val ints = args.map(_.toInt)
-  val l3 = ints.toList tap println
+  val l3   = ints.toList tap println
   l3.mimax pipe println
 
   printEndLine()
