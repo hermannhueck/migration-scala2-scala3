@@ -38,7 +38,7 @@ object Monad {
       option flatMap f
   }
 
-  implicit def eitherMonad[L]: Monad[Either[L, ?]] = new Monad[Either[L, ?]] {
+  implicit def eitherMonad[L]: Monad[Either[L, *]] = new Monad[Either[L, *]] {
     def pure[A](a: A): Either[L, A] = Right(a)
     def flatMap[A, B](fa: Either[L, A])(f: A => Either[L, B]): Either[L, B] =
       fa flatMap f

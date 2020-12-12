@@ -27,7 +27,7 @@ final case class Reader[P, A](run: P => A) {
 
 object Reader {
 
-  implicit def readerMonad[P]: Monad[Reader[P, ?]] = new Monad[Reader[P, ?]] {
+  implicit def readerMonad[P]: Monad[Reader[P, *]] = new Monad[Reader[P, *]] {
 
     def pure[A](a: A): Reader[P, A] =
       Reader.pure(a)
