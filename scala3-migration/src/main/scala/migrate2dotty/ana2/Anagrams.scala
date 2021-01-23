@@ -7,7 +7,7 @@ def anagramsFor(word: String, wordsToCheck: List[String]): List[String] =
   wordsToCheck filter { isAnagram(_, word) }
 
 def isAnagram(toCheck: String, word: String): Boolean =
-  if toCheck.toLowerCase == word.toLowerCase
+  if toCheck.toLowerCase == word.toLowerCase then
     false
   else
     isAnagram2Helper(toCheck.toLowerCase.nn.toList, word.toLowerCase.nn.toList)

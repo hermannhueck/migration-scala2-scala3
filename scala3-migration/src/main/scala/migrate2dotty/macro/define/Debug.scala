@@ -16,14 +16,14 @@ object Debug:
   inline def debugSingle(inline expr: Any): Unit =
     ${debugSingleImpl('expr)} 
   
-  private def debugSingleImpl(expr: Expr[Any])(using QuoteContext): Expr[Unit] = 
+  private def debugSingleImpl(expr: Expr[Any])(using Quotes): Expr[Unit] = 
     '{ println("Value of " + ${Expr(expr.show)} + " is " + $expr) }
   
   // --
 
   inline def debug(inline exprs: Any*): Unit = ${debugImpl('exprs)}
 
-  private def debugImpl(exprs: Expr[Seq[Any]])(using QuoteContext): Expr[Unit] = 
+  private def debugImpl(exprs: Expr[Seq[Any]])(using Quotes): Expr[Unit] = 
 
     def showWithValue(e: Expr[_]): Expr[String] =
      '{${Expr(e.show)} + " = " + $e}

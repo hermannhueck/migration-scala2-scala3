@@ -1,27 +1,27 @@
 package migrate2dotty.mimax
 
-def [T: Ordering](xs: List[T]) mimax: List[T] =
+extension[T: Ordering](xs: List[T])
+  def mimax: List[T] =
 
-  val sorted = xs.sorted.reverse
+    val sorted = xs.sorted.reverse
 
-  val (middle, listEvenLength) =
-    if sorted.length % 2 == 0
-      (List.empty[T], sorted)
-    else
-      (List(sorted.head), sorted.tail)
+    val (middle, listEvenLength) =
+      if sorted.length % 2 == 0 then
+        (List.empty[T], sorted)
+      else
+        (List(sorted.head), sorted.tail)
 
-  val (l1, l2) = listEvenLength
-    .grouped(2) // Iterator[List[T]] each List with 2 elems
-    .toList     // List[List[T]] each List with 2 elems
-    .map {
-      case List(x, y) => (x, y)
-      case _ => throw new java.lang.IllegalStateException
-    } // List[(T, T)]
-    .unzip // (List[T], List[T])
-    .swap  // (List[T], List[T])
+    val (l1, l2) = listEvenLength
+      .grouped(2) // Iterator[List[T]] each List with 2 elems
+      .toList     // List[List[T]] each List with 2 elems
+      .map {
+        case List(x, y) => (x, y)
+        case _ => throw new java.lang.IllegalStateException
+      } // List[(T, T)]
+      .unzip // (List[T], List[T])
+      .swap  // (List[T], List[T])
 
-  l1.sorted ++ middle ++ l2
-end mimax
+    l1.sorted ++ middle ++ l2
 
 
 import scala.util.chaining._

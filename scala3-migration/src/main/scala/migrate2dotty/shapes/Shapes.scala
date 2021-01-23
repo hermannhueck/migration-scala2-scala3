@@ -7,13 +7,13 @@ object Geometry {
 
   object Length:
     def apply(d: Double): Length = d
+    extension (length: Length)
+      def double: Double = length
+
   object Area:
     def apply(d: Double): Area = d
-
-  extension on (length: Length):
-    def double: Double = length
-  extension on (area: Area):
-    def double: Double = area
+    extension (area: Area)
+      def double: Double = area
 
   enum Shape {
 

@@ -4,8 +4,7 @@ import util._
 import scala.util.chaining._
 import scala.language.implicitConversions
 
-// import Joiner._
-import Joiner.{given _} // should work w/o this import, b/c givens are in implicit scope
+import Joiner.given
 
 @main def JoinerDemo: Unit =
 

@@ -11,8 +11,8 @@ object MultiversialEquality:
   assert(s == "foo")
   // assert(x != s) // does not compile with -language:strictEquality
 
-  given Eql[Int, String] = Eql.derived
-  given Eql[String, Int] = Eql.derived
+  given CanEqual[Int, String] = CanEqual.derived
+  given CanEqual[String, Int] = CanEqual.derived
   assert(x != s)
   assert(s != x)
 

@@ -1,25 +1,25 @@
 package migrate2dotty.joiner
 
-import scala.annotation.infix
-
 trait Joiner[A]:
 
   def zero: A
-  @infix def (lhs: A) join (rhs: A): A
 
-  inline def (as: Seq[A]) joinAll: A =
-    as.fold(zero)(_ join _)
+  extension (lhs: A)
+    def join (rhs: A): A
+
+  extension (as: Seq[A])
+    def joinAll: A = as.fold(zero)(_ join _)
 
 object Joiner:
 
   def apply[A: Joiner]: Joiner[A] = summon
 
-  given as Joiner[Int]:
-    override def zero: Int = 0
-    @infix override def (lhs: Int) join (rhs: Int): Int =
-      lhs + rhs
+  given Joiner[Int] with
+    def zero: Int = 0
+    extension (lhs: Int)
+      def join (rhs: Int): Int = lhs + rhs
 
-  given [A] as Joiner[List[A]]:
-    override def zero: List[A] = List.empty[A]
-    @infix override def (lhs: List[A]).join(rhs: List[A]): List[A] =
-      lhs ++ rhs
+  given[A] (using Joiner[A]): Joiner[List[A]] with
+    def zero: List[A] = List.empty[A]
+    extension (lhs: List[A])
+      def join(rhs: List[A]): List[A] = lhs ++ rhs
