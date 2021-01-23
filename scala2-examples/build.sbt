@@ -9,7 +9,6 @@ val scala2xVersion = "2.13.4"
 
 inThisBuild(
   Seq(
-    name := projectName,
     description := projectDescription,
     version := projectVersion,
     scalaVersion := scala2xVersion,
@@ -17,12 +16,12 @@ inThisBuild(
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-compiler"  % scala2xVersion,
       "org.scala-lang" % "scala-reflect"   % scala2xVersion,
-      "org.typelevel"  %% "cats-effect"    % "2.3.0",
+      "org.typelevel"  %% "cats-effect"    % "2.3.1",
       "org.scalatest"  %% "scalatest"      % "3.2.3" % Test,
-      "org.scalacheck" %% "scalacheck"     % "1.15.1" % Test,
+      "org.scalacheck" %% "scalacheck"     % "1.15.2" % Test,
       "com.novocode"   % "junit-interface" % "0.11" % Test,
       compilerPlugin(
-        "org.typelevel" % "kind-projector" % "0.11.2" cross CrossVersion.full
+        "org.typelevel" % "kind-projector" % "0.11.3" cross CrossVersion.full
       ),
       compilerPlugin( // https://github.com/oleg-py/better-monadic-for
         compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
@@ -39,3 +38,9 @@ inThisBuild(
 )
 
 Compile / console / scalacOptions --= scalcOptionsToRemoveForConsole
+
+lazy val root = project
+  .in(file("."))
+  .settings(
+    name := projectName
+  )
