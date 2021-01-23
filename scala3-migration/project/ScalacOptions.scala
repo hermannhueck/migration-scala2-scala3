@@ -10,7 +10,6 @@ object ScalacOptions {
     "-deprecation",     // emit warning and location for usages of deprecated APIs
     "-explain",         // Explain errors in more detail.
     "-explain-types",   // Explain type errors in more detail.
-    "-migration",       // with warning and location for migration issues from Scala 2
     "-new-syntax",      // require `then` and `do` in control expressions
     "-indent",          // allow significant indentation
     "-feature",         // emit warning and location for usages of features that should be imported explicitly
