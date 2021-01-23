@@ -4,12 +4,11 @@ val projectName        = "scala3-migration"
 val projectDescription = "migration: examples migrated to Dotty/Scala3"
 val projectVersion     = "0.1.0"
 
-val dottyVersion = "0.24.0-RC1"
+val dottyVersion = "3.0.0-M3"
 // val dottyVersion = dottyLatestNightlyBuild.get
 
 inThisBuild(
   Seq(
-    name := projectName,
     description := projectDescription,
     version := projectVersion,
     scalaVersion := dottyVersion,
@@ -26,3 +25,9 @@ inThisBuild(
         )
   )
 )
+
+lazy val root = project
+  .in(file("."))
+  .settings(
+    name := projectName
+  )
