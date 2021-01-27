@@ -30,9 +30,13 @@ object Debug:
   
     val stringExps: Seq[Expr[String]] = exprs match 
       case Varargs(es) => 
-        es.map {
-          case Const(s: String) => Expr(s)
-          case e => showWithValue(e)
+        es.map { e =>
+          if e.isExprOf[String] then
+            e.asInstanceOf[Expr[String]]
+          else
+            showWithValue(e)
+          // case Const(s: String) => Expr(s) // deprecated since 3.0.0-M3
+          // case e => showWithValue(e)
         }
       case e => List(showWithValue(e))
   
