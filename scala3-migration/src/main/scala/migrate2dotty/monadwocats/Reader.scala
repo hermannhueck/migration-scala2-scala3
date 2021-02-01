@@ -12,26 +12,27 @@ final case class Reader[P, A](run: P => A):
   def flatMap[B](f: A => Reader[P, B]): Reader[P, B] =
     Reader(p => f(run(p)).run(p))
 
-  def andThen[B](that: Reader[A, B]): Reader[P, B] =
+  infix def andThen[B](that: Reader[A, B]): Reader[P, B] =
     Reader(this.run andThen that.run)
 
-  def andThen[B](that: A => B): Reader[P, B] =
+  infix def andThen[B](that: A => B): Reader[P, B] =
     Reader(this.run andThen that.apply)
 
-  def compose[B](that: Reader[B, P]): Reader[B, A] =
+  infix def compose[B](that: Reader[B, P]): Reader[B, A] =
     Reader(this.run compose that.run)
 
-  def compose[B](that: B => P): Reader[B, A] =
+  infix def compose[B](that: B => P): Reader[B, A] =
     Reader(this.run compose that.apply)
+
 
 object Reader:
 
   // given [P]: Monad[[R] =>> Reader[P, R]] // w/o -Ykind-projector
   given[P]: Monad[Reader[P, *]] with // requires -Ykind-projector
-    override def pure[A](a: A): Reader[P, A] = Reader pure a
+    override def pure[A](a: A): Reader[P, A] = Reader.pure(a)
     extension [A, B](fa: Reader[P, A])
       override def flatMap (f: A => Reader[P, B]): Reader[P, B] =
-        fa flatMap f
+        fa.flatMap(f)
 
   def pure[P, A](a: A): Reader[P, A] =
     Reader(_ => a)

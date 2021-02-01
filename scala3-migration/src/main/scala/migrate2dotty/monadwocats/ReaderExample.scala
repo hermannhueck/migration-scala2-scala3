@@ -1,7 +1,6 @@
 package migrate2dotty.monadwocats
 
 import scala.util.chaining._
-import scala.language.implicitConversions
 import util._
 
 @main def ReaderExample: Unit =

@@ -2,9 +2,8 @@ package migrate2dotty.joiner
 
 import util._
 import scala.util.chaining._
-import scala.language.implicitConversions
 
-import Joiner.given
+import Joiner.{joinAll, given}
 
 @main def JoinerDemo: Unit =
 
@@ -36,16 +35,11 @@ import Joiner.given
   val liJoined = liJoined4
   s"$li1 join $li2 = $liJoined" pipe println
 
-  def join[A: Joiner](l: A, r: A) = l join r
-  val liJoined5 = join(li1, li2)
-  s"$li1 join $li2 = $liJoined5" pipe println
-
   s"${line(10)} joining all Int values of a List[Int] ...".green pipe println
 
-  val allIntsJoined1 = Joiner[Int].joinAll(liJoined)
+  val allIntsJoined = Joiner[Int].joinAll(liJoined: _*)
   val allIntsJoined2 = liJoined.joinAll
-  
-  val allIntsJoined = allIntsJoined2
   s"all ints joined: $allIntsJoined" pipe println
+  s"all ints joined: $allIntsJoined2" pipe println
   
   line().green pipe println

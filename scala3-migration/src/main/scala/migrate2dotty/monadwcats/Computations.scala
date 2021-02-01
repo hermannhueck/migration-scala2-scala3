@@ -4,8 +4,6 @@ import cats._
 import cats.syntax.flatMap._
 import cats.syntax.functor._
 
-import scala.language.implicitConversions
-
 def compute[F[_]: Monad, A, B](fa: F[A], fb: F[B]): F[(A, B)] =
   for
     a <- fa

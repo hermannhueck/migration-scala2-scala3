@@ -1,25 +1,30 @@
 package migrate2dotty.joiner
 
+// Joiner in fact is Monoid.
+
 trait Joiner[A]:
-
   def zero: A
-
   extension (lhs: A)
-    def join (rhs: A): A
-
-  extension (as: Seq[A])
-    def joinAll: A = as.fold(zero)(_ join _)
+    infix def join (rhs: A): A
+  def joinAll(as: A*): A =
+    as.fold(zero)(_ join _)
 
 object Joiner:
 
   def apply[A: Joiner]: Joiner[A] = summon
 
   given Joiner[Int] with
-    def zero: Int = 0
+    override def zero: Int = 0
     extension (lhs: Int)
-      def join (rhs: Int): Int = lhs + rhs
+      infix inline override def join(rhs: Int): Int =
+        lhs + rhs
 
-  given[A] (using Joiner[A]): Joiner[List[A]] with
-    def zero: List[A] = List.empty[A]
-    extension (lhs: List[A])
-      def join(rhs: List[A]): List[A] = lhs ++ rhs
+  given [A]: Joiner[List[A]] with
+    override def zero: List[A] = List.empty[A]
+    extension (lhs: List[A] )
+      infix inline override def join(rhs: List[A] ): List[A]  =
+        lhs ++ rhs
+
+  extension [A: Joiner](as: List[A])
+    inline def joinAll: A =
+      Joiner[A].joinAll(as: _*)

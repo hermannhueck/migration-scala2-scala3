@@ -25,7 +25,7 @@ object Debug:
 
   private def debugImpl(exprs: Expr[Seq[Any]])(using Quotes): Expr[Unit] = 
 
-    def showWithValue(e: Expr[_]): Expr[String] =
+    def showWithValue(e: Expr[?]): Expr[String] =
      '{${Expr(e.show)} + " = " + $e}
   
     val stringExps: Seq[Expr[String]] = exprs match 
