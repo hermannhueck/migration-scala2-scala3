@@ -5,7 +5,7 @@ autoscale: true
 ### (a live coding session)
 # <br/>
 
-#### copyright 2020 Hermann Hueck
+#### copyright 2021 Hermann Hueck
 #### <br/>
 #### https://github.com/hermannhueck/migration-scala2-scala3
 
@@ -41,7 +41,7 @@ In this live coding presentation I am taking some Scala 2 code samples and migra
 - Union Types
 - Explicit Nulls
 - Strict/Multiversial Equality
-- Using Scala 2 libraries with Dotty
+- Using Scala 2 libraries in Scala 3 programs
 
 ---
 
@@ -57,17 +57,13 @@ In this live coding presentation I am taking some Scala 2 code samples and migra
   [https://github.com/hermannhueck/migration-scala2-scala3](https://github.com/hermannhueck/migration-scala2-scala3)
 - Other presentation (much more detailed for the different features): code and slides
   [https://github.com/hermannhueck/taste-of-dotty](https://github.com/hermannhueck/taste-of-dotty)
-- Dotty Documention
+- Dotty/Scala 3 Documention
   [https://dotty.epfl.ch/docs/](https://dotty.epfl.ch/docs/)
-- Scala 2 Roadmap Update: the Road to Scala 3
-  [https://www.scala-lang.org/2019/12/18/road-to-scala-3.html](https://www.scala-lang.org/2019/12/18/road-to-scala-3.html)
 
 ---
 
 ## Talks
 
-- Martin Odersky (Lightbend Webinar): Scala 3 is Coming (published July 2019)
-  [https://www.youtube.com/watch?v=U2tjcwSag_0](https://www.youtube.com/watch?v=U2tjcwSag_0)
 - Martin Odersky at ScalaSphere Krakow: Revisiting Implicits (published October 2019)
   [https://www.youtube.com/watch?v=h4dS5WRGJtE](https://www.youtube.com/watch?v=h4dS5WRGJtE)
 - Nicolas Stucki at ScalaDays Lausanne: Metaprogramming in Dotty (published July 2019)
