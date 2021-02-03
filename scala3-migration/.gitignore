@@ -6,7 +6,7 @@ target/
 .bloop/
 .metals/
 .vscode/
-.bsp
+.bsp/
 
 # files
 *.class
@@ -19,6 +19,3 @@ metals.sbt
 .history
 .dotty-ide*
 .DS_Store
-
-.bloop/*
-.metals/*
