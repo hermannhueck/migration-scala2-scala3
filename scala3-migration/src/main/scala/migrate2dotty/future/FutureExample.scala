@@ -1,7 +1,7 @@
 package migrate2dotty.future
 
 import scala.concurrent.{ExecutionContext, Future}
-import scala.concurrent.duration._
+import scala.concurrent.duration.*
 import scala.util.{Failure, Success, Try}
 
 def someComputation(): Int =
@@ -18,9 +18,9 @@ def defTryHandler[A](tryy: Try[A]): Unit = {
 val tryHandler = defTryHandler[Int] // eta expansion
 
 
-import scala.util.chaining._
+import scala.util.chaining.*
 import scala.language.implicitConversions
-import util._
+import util.*
 
 @main def FutureExample: Unit =
 

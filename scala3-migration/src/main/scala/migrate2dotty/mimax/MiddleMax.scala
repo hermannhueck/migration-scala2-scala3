@@ -24,9 +24,9 @@ extension[T: Ordering](xs: List[T])
     l1.sorted ++ middle ++ l2
 
 
-import scala.util.chaining._
+import scala.util.chaining.*
 import scala.language.implicitConversions
-import util._
+import util.*
 
 @main def MiddleMax(ints: Int*) =
 

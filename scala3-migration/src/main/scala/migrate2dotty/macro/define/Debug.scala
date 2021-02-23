@@ -6,7 +6,7 @@ package migrate2dotty.macros.define
 
 object Debug:
 
-  import scala.quoted._
+  import scala.quoted.*
 
   inline def hello(): Unit =
     println("Hello, world!")

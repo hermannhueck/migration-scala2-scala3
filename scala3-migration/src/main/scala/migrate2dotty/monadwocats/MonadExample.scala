@@ -1,7 +1,7 @@
 package migrate2dotty.monadwocats
 
-import scala.util.chaining._
-import util._
+import scala.util.chaining.*
+import util.*
 
 @main def MonadExample: Unit =
 

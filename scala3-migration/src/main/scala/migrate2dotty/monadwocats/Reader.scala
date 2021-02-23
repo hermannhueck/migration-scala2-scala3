@@ -30,8 +30,8 @@ object Reader:
   // given [P]: Monad[[R] =>> Reader[P, R]] // w/o -Ykind-projector
   given[P]: Monad[Reader[P, *]] with // requires -Ykind-projector
     override def pure[A](a: A): Reader[P, A] = Reader.pure(a)
-    extension [A, B](fa: Reader[P, A])
-      override def flatMap (f: A => Reader[P, B]): Reader[P, B] =
+    extension [A](fa: Reader[P, A])
+      override def flatMap[B](f: A => Reader[P, B]): Reader[P, B] =
         fa.flatMap(f)
 
   def pure[P, A](a: A): Reader[P, A] =

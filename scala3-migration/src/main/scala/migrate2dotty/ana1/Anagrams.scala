@@ -19,9 +19,9 @@ def lcSorted(s: String) =
   s.toLowerCase.nn.toSeq.sorted.unwrap
 
 
-import scala.util.chaining._
+import scala.util.chaining.*
 import scala.language.implicitConversions
-import util._
+import util.*
   
 @main def Anagrams: Unit =
 

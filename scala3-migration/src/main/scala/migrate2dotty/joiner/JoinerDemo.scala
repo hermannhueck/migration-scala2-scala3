@@ -1,7 +1,7 @@
 package migrate2dotty.joiner
 
-import util._
-import scala.util.chaining._
+import util.*
+import scala.util.chaining.*
 
 import Joiner.{joinAll, given}
 
@@ -37,7 +37,7 @@ import Joiner.{joinAll, given}
 
   s"${line(10)} joining all Int values of a List[Int] ...".green pipe println
 
-  val allIntsJoined = Joiner[Int].joinAll(liJoined: _*)
+  val allIntsJoined = Joiner[Int].joinAll(liJoined *)
   val allIntsJoined2 = liJoined.joinAll
   s"all ints joined: $allIntsJoined" pipe println
   s"all ints joined: $allIntsJoined2" pipe println

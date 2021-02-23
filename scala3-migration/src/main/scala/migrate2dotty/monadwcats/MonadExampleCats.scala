@@ -1,11 +1,11 @@
 package migrate2dotty.monadwcats
 
-import cats.instances.list._
-import cats.instances.option._
-import cats.instances.either._
+import cats.instances.list.*
+import cats.instances.option.*
+import cats.instances.either.*
 
-import scala.util.chaining._
-import util._
+import scala.util.chaining.*
+import util.*
 
 @main def MonadExampleCats: Unit =
 

@@ -30,12 +30,12 @@ object Geometry {
   }
 }
 
-import scala.util.chaining._
+import scala.util.chaining.*
 import scala.language.implicitConversions
-import util._
+import util.*
 
-import Geometry._
-import Geometry.Shape._
+import Geometry.*
+import Geometry.Shape.*
 
 @main def Shapes: Unit =
 

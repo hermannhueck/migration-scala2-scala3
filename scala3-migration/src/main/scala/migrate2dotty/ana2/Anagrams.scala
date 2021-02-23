@@ -24,9 +24,9 @@ def deleteFrom(chars: List[Char], ch: Char): List[Char] =
   chars.takeWhile(_ != ch) ++ chars.dropWhile(_ != ch).tail
 
 
-import scala.util.chaining._
+import scala.util.chaining.*
 import scala.language.implicitConversions
-import util._
+import util.*
 
 @main def Anagrams: Unit =
 

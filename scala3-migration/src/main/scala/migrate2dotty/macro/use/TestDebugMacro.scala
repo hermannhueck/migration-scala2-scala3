@@ -4,9 +4,9 @@ package migrate2dotty.macros.use
 //   https://blog.softwaremill.com/starting-with-scala-3-macros-a-short-tutorial-88e9d2b2584c
 //   https://github.com/softwaremill/scala3-macro-debug
 
-import scala.util.chaining._
-import migrate2dotty.macros.define.Debug._
-import util._
+import scala.util.chaining.*
+import migrate2dotty.macros.define.Debug.*
+import util.*
 import scala.language.implicitConversions
 
 object TestDebugMacro extends App:
