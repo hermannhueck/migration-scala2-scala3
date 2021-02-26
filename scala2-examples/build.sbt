@@ -5,7 +5,7 @@ val projectDescription =
   "migration: scala2-examples to be migrated to Dotty/Scala3"
 val projectVersion = "0.1.0"
 
-val scala2xVersion = "2.13.4"
+val scala2xVersion = "2.13.5"
 
 inThisBuild(
   Seq(
