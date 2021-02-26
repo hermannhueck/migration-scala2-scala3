@@ -16,9 +16,9 @@ inThisBuild(
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-compiler"  % scala2xVersion,
       "org.scala-lang" % "scala-reflect"   % scala2xVersion,
-      "org.typelevel"  %% "cats-effect"    % "2.3.1",
-      "org.scalatest"  %% "scalatest"      % "3.2.3" % Test,
-      "org.scalacheck" %% "scalacheck"     % "1.15.2" % Test,
+      "org.typelevel"  %% "cats-effect"    % "2.3.3",
+      "org.scalatest"  %% "scalatest"      % "3.2.5" % Test,
+      "org.scalacheck" %% "scalacheck"     % "1.15.3" % Test,
       "com.novocode"   % "junit-interface" % "0.11" % Test,
       compilerPlugin(
         "org.typelevel" % "kind-projector" % "0.11.3" cross CrossVersion.full
