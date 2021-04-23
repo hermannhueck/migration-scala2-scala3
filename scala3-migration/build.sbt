@@ -4,7 +4,7 @@ val projectName        = "scala3-migration"
 val projectDescription = "migration: examples migrated to Dotty/Scala3"
 val projectVersion     = "0.1.0"
 
-val dottyVersion = "3.0.0-RC1"
+val dottyVersion = "3.0.0-RC3"
 // val dottyVersion = dottyLatestNightlyBuild.get
 
 inThisBuild(
@@ -16,10 +16,10 @@ inThisBuild(
     scalacOptions ++= dotcOptions, // see: project/ScalacOptions.scala
     libraryDependencies ++=
       Seq(
-        "org.typelevel"  %% "cats-effect" % "2.3.3",
-        "org.scalameta"  %% "munit"       % "0.7.22",
+        "org.typelevel"  %% "cats-effect" % "3.1.0",
+        "org.scalameta"  %% "munit"       % "0.7.25",
         "org.scalacheck" %% "scalacheck"  % "1.15.3" % Test
-      ).map(_.withDottyCompat(scalaVersion.value)) ++
+      ).map(_.cross(CrossVersion.for3Use2_13)) ++
         Seq(
           "com.novocode" % "junit-interface" % "0.11" % Test
         )
