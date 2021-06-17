@@ -5,7 +5,7 @@ val projectDescription =
   "migration: scala2-examples to be migrated to Dotty/Scala3"
 val projectVersion = "0.1.0"
 
-val scala2xVersion = "2.13.5"
+val scala2xVersion = "2.13.6"
 
 inThisBuild(
   Seq(
@@ -16,12 +16,12 @@ inThisBuild(
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-compiler"  % scala2xVersion,
       "org.scala-lang" % "scala-reflect"   % scala2xVersion,
-      "org.typelevel"  %% "cats-effect"    % "2.3.3",
-      "org.scalatest"  %% "scalatest"      % "3.2.5" % Test,
-      "org.scalacheck" %% "scalacheck"     % "1.15.3" % Test,
+      "org.typelevel"  %% "cats-effect"    % "3.1.1",
+      "org.scalatest"  %% "scalatest"      % "3.2.9" % Test,
+      "org.scalacheck" %% "scalacheck"     % "1.15.4" % Test,
       "com.novocode"   % "junit-interface" % "0.11" % Test,
       compilerPlugin(
-        "org.typelevel" % "kind-projector" % "0.11.3" cross CrossVersion.full
+        "org.typelevel" % "kind-projector" % "0.13.0" cross CrossVersion.full
       ),
       compilerPlugin( // https://github.com/oleg-py/better-monadic-for
         compilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
